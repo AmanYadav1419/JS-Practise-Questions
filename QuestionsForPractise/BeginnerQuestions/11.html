@@ -1,0 +1,23 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- Basic DOM Manipulation -->
+<!-- Create a button dyanmically and add it to the webpage  -->
+    <div id="container"></div>
+
+    <script>
+        let container =  document.getElementById("container");
+        let button = document.createElement("button");
+        button.textContent = "New button";
+        container.appendChild(button) 
+        // <!-- es wahaj se ye container me button aa gaya -->
+    </script>
+</body>
+</html>
