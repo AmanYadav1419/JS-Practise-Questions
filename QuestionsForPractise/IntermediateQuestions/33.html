@@ -1,0 +1,31 @@
+<!-- Event Bubbling and Capturing -->
+<!-- Implement a click event on a parent element that triggers differnt action based on which child element was clicked -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>34</title>
+</head>
+<body>
+    <ul id="myList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <script>
+        let myList = document.getElementById("myList");
+
+        myList.addEventListener("click",(event)=>{
+            let clickedElement = event.target;
+            if(clickedElement.tagName === "LI"){
+                console.log("List item clicked",clickedElement.textContent)
+            } else {
+                console.log("Other element");
+            }
+        })
+    </script>
+</body>
+</html>

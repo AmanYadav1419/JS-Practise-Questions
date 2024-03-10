@@ -1,0 +1,48 @@
+<!-- Async Programming : 
+Promises:
+
+Use Promises to load multiple images asynchronously and display them on a webpage -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>27</title>
+</head>
+<body>
+    <div id="imageContainer"></div>
+
+    <script>
+        async function loadImage(src){
+            return new Promise((resolve,reject)=>{
+                let image = new Image(500,500);
+                image.onload = function(){
+                    resolve(image)
+                };
+                image.onerror = function(){
+                    reject(new Error("Faild to load image:"+src));
+                }
+                image.src = src;
+            })
+        }
+        
+
+        async function loadImages(){
+            let imageContainer = document.getElementById("imageContainer");
+            let  imageUrls = ["./img/elem1.jpg", "./img/elem3.jpg", "./img/retro3.jpg"];
+            try{
+                const images = await Promise.all(imageUrls.map(loadImage));
+                images.forEach(image => imageContainer.appendChild(image));
+            }
+            catch(error){
+                console.error(error)
+            }
+
+        }
+
+        loadImages()
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!-- Evet Bubbling and Capturing -->
+<!-- Create multiple nested elements and observe the event bubbling and capturing behaviour -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        Lorem,<strong>ipsum dolor</strong> sit amet consectetur adipisicing elit. Dicta temporibus voluptatem quisquam excepturi. Incidunt nisi veniam modi consectetur consequuntur minima iure voluptates eligendi dolore blanditiis nihil, itaque repudiandae? Praesentium, minus.
+    </div>
+
+    <script>
+        let parent = document.querySelector("div");
+        let child = document.querySelector("strong");
+
+        parent.addEventListener("click",()=>{
+            console.log("Parent");
+        },true)
+
+        child.addEventListener("click",()=>{
+            console.log("Child");
+        },true)
+    </script>
+</body>
+</html>
