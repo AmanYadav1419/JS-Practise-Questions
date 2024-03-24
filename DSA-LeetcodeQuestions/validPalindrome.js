@@ -1,3 +1,4 @@
+// check whether the string is palindrome or not if it's palindrome then return true if not return false
 // Input s = "A man, a plan, a canal: Panama"
 // Output: true
 
